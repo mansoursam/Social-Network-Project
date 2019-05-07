@@ -15,6 +15,6 @@ Please make sure to update tests as appropriate.
 
 # App Info
 ## Author
-Sam Mansour, Michal Grajoszek, Ahmad Malla, Ayman Al Haddad
+Sam Mansour, Michal Grajoszek, Ahmad Malla, Ayman Al Haddad, Md Ariful Islam(trainer)
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

@@ -123,23 +123,21 @@ router.post(
     if (req.body.age) profileFields.age = req.body.age;
     if (req.body.city) profileFields.city = req.body.city;
     if (req.body.zip) profileFields.zip = req.body.zip;
-    if (req.files.profile_image)
-      profileFields.profile_image = req.files.profile_image;
+    if (req.files.profile_image) profileFields.images = {};
+    profileFields.images.profile_image = req.files.profile_image;
     if (req.files.background_image)
-      profileFields.background_image = req.files.background_image;
+      profileFields.images.background_image = req.files.background_image;
     if (req.body.aboutme) profileFields.aboutme = req.body.aboutme;
 
     //skills
     if (typeof req.body.skills !== "undefined") {
       profileFields.skills = req.body.skills.split(",");
     }
-    //social
-    // profileFields.social = {};
-    // if (req.body.youtube) profileFields.social.youtube = req.body.youtube;
-    // if (req.body.twitter) profileFields.social.twitter = req.body.twitter;
-    // if (req.body.linkedin) profileFields.social.linkedin = req.body.linkedin;
-    // if (req.body.instagram) profileFields.social.instagram = req.body.instagram;
-    // if (req.body.facebook) profileFields.social.facebook = req.body.facebook;
+    profileFields.social = {};
+    if (req.body.youtube) profileFields.social.youtube = req.body.youtube;
+    if (req.body.twitter) profileFields.social.twitter = req.body.twitter;
+    if (req.body.instagram) profileFields.social.instagram = req.body.instagram;
+    if (req.body.facebook) profileFields.social.facebook = req.body.facebook;
 
     Profile.findOne({ user: req.user.id }).then(profile => {
       if (profile) {

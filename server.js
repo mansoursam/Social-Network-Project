@@ -6,7 +6,7 @@ const cors = require("cors");
 const port = process.env.PORT || 3333;
 const users = require("./routes/users");
 const profiles = require("./routes/profiles");
-const Image = require("./models/Image");
+const posts = require("./routes/posts");
 
 const app = express();
 //use body-parser middleware
@@ -29,5 +29,6 @@ require("./config/passport")(passport);
 //use the routes
 app.use("/users", users);
 app.use("/profiles", profiles);
+app.use("/posts", posts);
 
 app.listen(port, () => console.log(`server is running on ${port}`));

@@ -14,12 +14,13 @@ const ProfileSchema = new Schema({
   },
   gender: { type: String },
   age: { type: Number },
-
-  background_image: {
-    type: Object
-  },
-  profile_image: {
-    type: Object
+  images: {
+    background_image: {
+      type: Object
+    },
+    profile_image: {
+      type: Object
+    }
   },
 
   street: {
@@ -116,13 +117,12 @@ const ProfileSchema = new Schema({
     facebook: {
       type: String
     },
-    linkedin: {
-      type: String
-    },
+
     instagram: {
       type: String
     }
   },
+
   date: {
     type: Date,
     default: Date.now

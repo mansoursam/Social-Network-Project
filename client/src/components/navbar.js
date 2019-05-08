@@ -20,7 +20,9 @@ class Navbar extends Component {
   };
   render() {
     const { profile } = this.props.profile;
-    console.log(profile.profile_image ? profile.profile_image[0].url : null);
+    console.log(this.props.profile);
+
+    console.log(profile.images ? profile.images.profile_image[0].url : null);
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -71,11 +73,11 @@ class Navbar extends Component {
               <img
                 className="rounded-circle"
                 src={
-                  profile.profile_image ? profile.profile_image[0].url : null
+                  profile.images ? profile.images.profile_image[0].url : null
                 }
                 alt={
-                  profile.profile_image
-                    ? profile.profile_image[0].originalname
+                  profile.images
+                    ? profile.images.profile_image[0].originalname
                     : null
                 }
                 style={{ width: "30px", height: "30px", marginRight: "5px" }}

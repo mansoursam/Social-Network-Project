@@ -5,3 +5,4 @@ export const PROFILE_LOADING = "PROFILE_LOADING";
 export const CLEAR_PROFILE = "CLEAR_PROFILE";
 export const PROFILE_NOT_FOUND = "PROFILE_NOT_FOUND";
 export const GET_PROFILES = "GET_PROFILES";
+export const ADD_POST = "ADD_POST";

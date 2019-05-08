@@ -20,11 +20,12 @@ class CreateProfile extends Component {
       country: "",
       city: "",
       status: "",
+
       youtube: "",
       twitter: "",
       facebook: "",
-      linkedin: "",
       instagram: "",
+
       errors: {}
     };
   }
@@ -60,7 +61,11 @@ class CreateProfile extends Component {
       street,
       zip,
       country,
-      city
+      city,
+      youtube,
+      instagram,
+      facebook,
+      twitter
     } = this.state;
     const profileData = new FormData();
     profileData.append("profile_image", profile_image);
@@ -74,6 +79,10 @@ class CreateProfile extends Component {
     profileData.append("zip", zip);
     profileData.append("country", country);
     profileData.append("city", city);
+    profileData.append("youtube", youtube);
+    profileData.append("instagram", instagram);
+    profileData.append("twitter", twitter);
+    profileData.append("facebook", facebook);
 
     this.props.createProfile(profileData, this.props.history);
   };
@@ -244,6 +253,67 @@ class CreateProfile extends Component {
                 name="zip"
                 id="zip"
                 value={this.state.zip}
+                onChange={this.onChange}
+              />
+            </div>
+
+            <div className="input-group mb-4">
+              <div className="input-group-prepend">
+                <span className="input-group-text">
+                  <i className="fab fa-youtube text-danger" />
+                </span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                name="youtube"
+                id="youtube"
+                value={this.state.youtube}
+                onChange={this.onChange}
+              />
+            </div>
+            <div className="input-group mb-4">
+              <div className="input-group-prepend">
+                <span className="input-group-text">
+                  <i class="fab fa-facebook" />
+                </span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                name="facebook"
+                id="facebook"
+                value={this.state.facebook}
+                onChange={this.onChange}
+              />
+            </div>
+            <div className="input-group mb-4">
+              <div className="input-group-prepend">
+                <span className="input-group-text">
+                  <i class="fab fa-twitter" />
+                </span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                name="twitter"
+                id="twitter"
+                value={this.state.twitter}
+                onChange={this.onChange}
+              />
+            </div>
+            <div className="input-group mb-4">
+              <div className="input-group-prepend">
+                <span className="input-group-text">
+                  <i class="fab fa-instagram" />
+                </span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                name="instagram"
+                id="instagram"
+                value={this.state.instagram}
                 onChange={this.onChange}
               />
             </div>
